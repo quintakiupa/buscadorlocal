@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-4">
+            <h1>
+                {{ comercio.nombre }}
+            </h1>
+            <h3> 
+            <address>
+                 <strong><i class="fa fa-map-marker" aria-hidden="true"></i> {{ comercio.direccion }}</strong><br />
+                 <i class="fa fa-phone" aria-hidden="true"> </i> {{ comercio.telefono }}<br />
+                 <i class="fa fa-envelope-o" aria-hidden="true"></i> {{ comercio.email }}<br />
+                 <i class="fa fa-globe" aria-hidden="true"></i> Catarroja<br />                 
+            </address>
+            </h3>            
+        </div>
+
+        {% if comercio.posicion == 1 %}
+        <div class="col-md-4">
+            <img alt="Bootstrap Image Preview" src="/img/locales/{{ comercio.telefono }}a.jpg" />            
+        </div>
+
+        <div class="col-md-4">
+            <img alt="Bootstrap Image Preview" src="/img/mapas/{{ comercio.telefono }}b.jpg" />
+        </div>
+        {% endif %}
+
+        {% if comercio.posicion == 2 %}
+        <div class="col-md-4">
+            <img alt="Bootstrap Image Preview" src="/img/mapas/{{ comercio.telefono }}b.jpg" />
+        </div>
+        {% endif %}        
+
+    </div>
+</div>
+
+    <ul>
+        <li>
+            <a href="{{ path('buscar_new') }}">Ir al buscador</a>
+        </li>        
+    </ul>
+{% endblock %}

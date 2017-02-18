@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block title %} 
+
+Listado completo de comercios clasificados por Tipo de comercio
+
+{% endblock %}
+
+{% block body %}
+
+	{% for tcomercio in tcomercios %}
+
+	<h3>
+	    Servicios o comercios de {{ tcomercio.nombre }} en Catarroja    
+	</h3>
+
+	<div class="table-responsive">
+	<table class="table table-striped">
+
+	{% for comercio in tcomercio.comercios | sortbyfield('posicion') %}
+	<tbody>
+	<tr>
+
+	{% if comercio.posicion == 1 %}
+		<td>
+			<div class='bg-success'>
+				<div><h1><a href="{{ path('comercio_show', {'id' : comercio.id }) }}">{{ comercio.nombre }}</a></h1></div>
+				<div><h3>{{ comercio.direccion }}</h3></div>
+				<div><h3><i class="fa fa-phone" aria-hidden="true"></i> {{ comercio.telefono }}</h3></div>
+				{% if is_granted('ROLE_ADMIN') %}
+				<div><a href="{{ path('comercio_edit', { 'id': comercio.id }) }}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></div>
+				{% endif %}
+			</div>
+		</td>
+
+	{% elseif comercio.posicion == 2 %}
+		<td>
+			<div class='bg-info'>
+				<div><h2><a href="{{ path('comercio_show', {'id' : comercio.id }) }}">{{ comercio.nombre }}</a></h2></div>
+				<div><h4>{{ comercio.direccion }}</h4></div>
+				<div><h4><i class="fa fa-phone" aria-hidden="true"></i> {{ comercio.telefono }}</h4></div>
+				{% if is_granted('ROLE_ADMIN') %}
+				<div><a href="{{ path('comercio_edit', { 'id': comercio.id }) }}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></div>
+				{% endif %}		
+			</div>
+		</td>
+
+	{% elseif comercio.posicion == 3 %}
+		<td>
+			<div class='bg-info'>
+				<div><h3><a href="{{ path('comercio_show', {'id' : comercio.id }) }}">{{ comercio.nombre }}</a></h3></div>
+				<div><h5>{{ comercio.direccion }}</h5></div>
+				<div><h5><i class="fa fa-phone" aria-hidden="true"></i> {{ comercio.telefono }}</h5></div>
+				{% if is_granted('ROLE_ADMIN') %}
+				<div><a href="{{ path('comercio_edit', { 'id': comercio.id }) }}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></div>
+				{% endif %}		
+			</div>
+		</td>
+
+	{% elseif comercio.posicion == 4 %}
+		<td>
+			<div>
+				<div>{{ comercio.nombre }}</div>
+				<div>{{ comercio.direccion }}</div>
+				<div>{{ comercio.telefono }}</div>
+				{% if is_granted('ROLE_ADMIN') %}
+				<div><a href="{{ path('comercio_edit', { 'id': comercio.id }) }}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></div>
+				{% endif %}		
+			</div>
+		</td>
+
+	{% elseif comercio.posicion == 5 %}
+		<td>
+			<div>
+				<div>{{ comercio.nombre }}</div>
+				<div>{{ comercio.direccion }}</div>
+				<div>{{ comercio.telefono }}</div>
+				{% if is_granted('ROLE_ADMIN') %}
+				<div><a href="{{ path('comercio_edit', { 'id': comercio.id }) }}"><button type="button" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></button></a></div>
+				{% endif %}	
+			</div>
+		</td>
+
+
+	{% endif %}
+
+	</tr>
+	</tbody>
+{% endfor %}
+</table>
+</div>
+{% endfor %}
+
+{% endblock %}

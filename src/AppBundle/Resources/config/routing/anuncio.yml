@@ -1,0 +1,24 @@
+anuncio_index:
+    path:     /list/
+    defaults: { _controller: "AppBundle:Anuncio:index" }
+    methods:  GET
+
+anuncio_show:
+    path:     /show/{id}/
+    defaults: { _controller: "AppBundle:Anuncio:show" }
+    methods:  GET
+
+anuncio_new:
+    path:     /new/
+    defaults: { _controller: "AppBundle:Anuncio:new" }
+    methods:  [GET, POST]
+
+anuncio_edit:
+    path:     /edit/{id}/
+    defaults: { _controller: "AppBundle:Anuncio:edit" }
+    methods:  [GET, POST]
+
+anuncio_delete:
+    path:     /delete/{id}/
+    defaults: { _controller: "AppBundle:Anuncio:delete" }
+    #methods:  DELETE

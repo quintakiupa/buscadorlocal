@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Rama del Comercio / Actividad </h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Detalles</th>
+                <th>Editar</th>                
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipocomercio in tipocomercios | sortbyfield('nombre') %}
+            <tr>
+                <td><a href="{{ path('tipocomercio_show', { 'id': tipocomercio.id }) }}">{{ tipocomercio.id }}</a></td>
+                <td>{{ tipocomercio.nombre }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td><a href="{{ path('tipocomercio_show', { 'id': tipocomercio.id }) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                <td><a href="{{ path('tipocomercio_edit', { 'id': tipocomercio.id }) }}"><i class="fa fa-pencil-square-o"></i></a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+    {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('tipocomercio_new') }}">Crear nueva rama de comercio</a>
+        </li>
+    {% endif %}
+    </ul>
+{% endblock %}

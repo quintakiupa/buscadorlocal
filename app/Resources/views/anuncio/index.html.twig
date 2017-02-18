@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Anuncios de interés:</h1>
+    <br>
+    <table class="table">        
+        {% for anuncio in anuncios | reverse %}
+            <tr>                
+                <td class="info"><h3>{{ anuncio.titulo }}</h3><h6>{% if anuncio.fecha %}{{ anuncio.fecha | date('d-m-Y') }}{% endif %}</h6></td>                       
+            <tr>
+                <td class="warning">{{ anuncio.texto }}</td>
+                <td class="danger">
+                <a href="{{ path('anuncio_show', { 'id': anuncio.id }) }}">Ver</a>
+                {% if is_granted('ROLE_ADMIN') %}
+                <a href="{{ path('anuncio_edit', { 'id': anuncio.id }) }}">Editar</a>
+                {% endif %}                
+                </td>                
+            </tr>
+            </tr>
+        {% endfor %}
+                       
+    </table>
+
+
+{% endblock %}

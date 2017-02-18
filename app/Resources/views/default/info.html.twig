@@ -1,0 +1,92 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+    {% block que_es %}
+    <li class="active"><a href="#"><i class="fa fa-info" aria-hidden="true"></i> {{ 'menu.que_es' | trans }}</a></li>
+    {% endblock %}
+
+{% block body %}
+
+    <div align="center">
+        <img class="img-responsive" src="{{ asset('/img/'~'caratula.jpg') }}" >
+    </div>
+
+        <br><hr><br>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                <div class="media">
+                    <div class="media-body">
+                        <h3>{{ 'info.title_1' | trans }}</h3>                        
+                            <p>
+                                {{ 'info.parrafo_1' | trans }}            
+                            </p>
+                            <p>
+                                {{ 'info.parrafo_2' | trans }}            
+                            </p>
+                            <p>
+                                {{ 'info.parrafo_3' | trans }}                       
+                            </p>
+                    </div>
+                    <div class="media-right media-middle hidden-xs">
+                        <img class="media-object img-thumbnail img-responsive" src="{{ asset('/img/'~'info-1.jpg') }}" alt="pic-1">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br><hr><br>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+                <div class="media">
+                    <div class="media-left media-middle hidden-xs">                        
+                        <img class="media-object img-thumbnail img-responsive" src="{{ asset('/img/'~'info-2.jpg') }}" alt="pic-2">
+                    </div>
+                    <div class="media-body">
+                        <h3>{{ 'info.title_2' | trans }}</h3>
+                        <p>
+                            {{ 'info.parrafo_4' | trans }}
+                        </p>
+                        <ul>
+                        <li>
+                        <p>
+                             <b>{{ 'info.negrita_1' | trans }}</b>{{ 'info.parrafo_5' | trans }}            
+                        </p>
+                        </li>
+                        <li>
+                        <p>
+                            <b>{{ 'info.negrita_2' | trans }}</b>{{ 'info.parrafo_6' | trans }}            
+                        </p>
+                        </li>
+                        <li>
+                        <p>
+                            <b>{{ 'info.negrita_3' | trans }}</b>{{ 'info.parrafo_7' | trans }}            
+                        </p>
+                        </li>
+                        <li>
+                        <p>
+                            <b>{{ 'info.negrita_4' | trans }}</b>{{ 'info.parrafo_8' | trans }}            
+                        </p>
+                        </li>
+                        <li>
+                        <p>
+                            <b>{{ 'info.negrita_5' | trans }}</b>{{ 'info.parrafo_9' | trans }}            
+                        </p>
+                        </ul>
+                    </div>    
+                </div>  <hr><div align="center"><a href="{{ path('buscar_new') }}"><input type='button' value="{{ 'info.boton_1' | trans }}" /></a></div>
+            </div>
+        </div>        
+    </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}

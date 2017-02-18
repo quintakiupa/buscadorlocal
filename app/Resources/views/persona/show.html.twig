@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Cliente</h1>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ persona.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ persona.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Apellido</th>
+                <td>{{ persona.apellido }}</td>
+            </tr>
+            <tr>
+                <th>Edad</th>
+                <td>{{ persona.edad }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ persona.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ persona.email }}</td>
+            </tr>
+            <tr>
+                <th>Genero</th>
+                <td>{{ persona.genero }}</td>
+            </tr>
+            <tr>
+                <th>Catarroja</th>
+                <td>{% if persona.catarroja %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('persona_index') }}">Listado de clientes</a>
+        </li><br>
+        {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('persona_edit', { 'id': persona.id }) }}">Editar</a>
+        </li><br>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar">
+            {{ form_end(delete_form) }}
+        </li>
+        {% endif %}
+    </ul>
+{% endblock %}

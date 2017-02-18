@@ -1,0 +1,24 @@
+tipoanuncio_index:
+    path:     /list
+    defaults: { _controller: "AppBundle:Tipoanuncio:index" }
+    methods:  GET
+
+tipoanuncio_show:
+    path:     /show/{id}/
+    defaults: { _controller: "AppBundle:Tipoanuncio:show" }
+    methods:  GET
+
+tipoanuncio_new:
+    path:     /new/
+    defaults: { _controller: "AppBundle:Tipoanuncio:new" }
+    methods:  [GET, POST]
+
+tipoanuncio_edit:
+    path:     /edit/{id}/
+    defaults: { _controller: "AppBundle:Tipoanuncio:edit" }
+    methods:  [GET, POST]
+
+tipoanuncio_delete:
+    path:     /{id}/delete/
+    defaults: { _controller: "AppBundle:Tipoanuncio:delete" }
+    methods:  DELETE

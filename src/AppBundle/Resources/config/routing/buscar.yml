@@ -1,0 +1,36 @@
+buscar_index:
+    path:     /list
+    defaults: { _controller: "AppBundle:Buscar:index" }
+    methods:  GET
+
+buscar_show:
+    path:     /show/{id}/
+    defaults: { _controller: "AppBundle:Buscar:show" }
+    methods:  GET
+
+buscar_new:
+    path:     /new/
+    defaults: { _controller: "AppBundle:Buscar:new" }
+    methods:  [GET, POST]
+
+buscar_edit:
+    path:     /edit/{id}/
+    defaults: { _controller: "AppBundle:Buscar:edit" }
+    methods:  [GET, POST]
+
+buscar_delete:
+    path:     /delete/{id}/
+    defaults: { _controller: "AppBundle:Buscar:delete" }
+    methods:  DELETE
+
+buscar_info:
+    path:    /infoServicio/
+    defaults: { _controller: "AppBundle:Buscar:infoServicio" }
+
+buscar_contacto:
+    path:    /contato/
+    defaults: { _controller: "AppBundle:Buscar:contacto" }
+
+buscar_estadistica:
+    path:    /estadistica/
+    defaults: { _controller: "AppBundle:Buscar:estadisticas" }

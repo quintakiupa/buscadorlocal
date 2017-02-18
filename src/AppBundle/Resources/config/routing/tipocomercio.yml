@@ -1,0 +1,24 @@
+tipocomercio_index:
+    path:     /list/
+    defaults: { _controller: "AppBundle:Tipocomercio:index" }
+    methods:  GET
+
+tipocomercio_show:
+    path:     /show/{id}/
+    defaults: { _controller: "AppBundle:Tipocomercio:show" }
+    methods:  GET
+
+tipocomercio_new:
+    path:     /new/
+    defaults: { _controller: "AppBundle:Tipocomercio:new" }
+    methods:  [GET, POST]
+
+tipocomercio_edit:
+    path:     /edit/{id}/
+    defaults: { _controller: "AppBundle:Tipocomercio:edit" }
+    methods:  [GET, POST]
+
+tipocomercio_delete:
+    path:     /{id}/delete/
+    defaults: { _controller: "AppBundle:Tipocomercio:delete" }
+    methods:  DELETE

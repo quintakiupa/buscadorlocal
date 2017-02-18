@@ -1,0 +1,239 @@
+
+{% trans_default_domain 'AppBundle' %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>
+            {% block title %}
+                Buscador Local by Paco Angulo
+            {% endblock %}
+        </title>
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+<!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css.map"/> -->
+            <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}" />
+            <link rel="stylesheet" href="{{ asset('css/mis_estilos.css') }}" />
+
+            <link rel="stylesheet" href="{{ asset('/css/mystyles.css') }}" /> 
+            <link rel="stylesheet" href="{{ asset('/css/mycss.css') }}" />
+
+        {% endblock %}        
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />        
+    </head>
+
+    <body>        
+        <div id="wrapper">
+
+
+{% block header %}
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="/"><img src="{{ asset('favicon.png')}}" height="30"></a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        {% block inicio %}                        
+                        <li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span> {{ 'menu.inicio' | trans }}</a></li>
+                        {% endblock %}
+                        {% block que_es %}
+                        <li><a href="{{ path('buscar_info') }}"><i class="fa fa-info" aria-hidden="true"></i> {{ 'menu.que_es' | trans }}</a></li>
+                        {% endblock %}
+                        {% block buscar %}
+                        <li><a href="{{ path('buscar_new') }}"><i class="fa fa-map-marker" aria-hidden="true"></i> {{ 'menu.buscar' | trans }}</a></li>
+                        {% endblock %}                    
+                        <!-- Aquí viene resto del menú -->
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">
+                            <span><i class="fa fa-columns" aria-hidden="true"></i></span> {{ 'menu.anuncios' | trans }}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                {% if is_granted('ROLE_ADMIN') %}                                
+                                <li><a href="{{ path('tipoanuncio_new') }}">{{ 'menu.anuncio_1' | trans }}</a></li>
+                                <li><a href="{{ path('tipoanuncio_index') }}">{{ 'menu.anuncio_2' | trans }}</a></li> 
+                                <li role="separator" class="divider"></li> 
+                                {% endif %}                                                               
+                                <li><a href="{{ path('anuncio_new') }}">{{ 'menu.anuncio_3' | trans }}</a></li>
+                                <li><a href="{{ path('anuncio_index') }}">{{ 'menu.anuncio_4' | trans }}</a></li>
+                            </ul>
+                        </li>
+                        {% block contacto %}
+                        <li><a href="{{ path('buscar_contacto') }}"><i class="fa fa-envelope-o"></i> {{ 'menu.contacto' | trans }}</a></li>
+                        {% endblock %}
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">
+                            <span><i class="fa fa-credit-card" aria-hidden="true"></i></span> {{ 'menu.admin' | trans }}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header">{{ 'menu.admin_1' | trans }}</li>
+                                <li><a href="{{ path('tipocomercio_new') }}">{{ 'menu.admin_2' | trans }}</a></li>
+                                <li><a href="{{ path('tipocomercio_index') }}">{{ 'menu.admin_3' | trans }}</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">{{ 'menu.admin_4' | trans }}</li>                                
+                                <li><a href="{{ path('persona_new') }}">{{ 'menu.admin_5' | trans }}</a></li>
+                                <li><a href="{{ path('persona_index') }}">{{ 'menu.admin_6' | trans }}</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">{{ 'menu.admin_7' | trans }}</li>                                
+                                <li><a href="{{ path('comercio_new') }}">{{ 'menu.admin_8' | trans }}</a></li>
+                                <li><a href="{{ path('comercio_index') }}">{{ 'menu.admin_9' | trans }}</a></li>  
+                            </ul>
+                        </li> 
+                        
+                        {% block estadistica %}
+                        <li><a href="{{ path('buscar_estadistica') }}"><i class="fa fa-bar-chart" aria-hidden="true"></i> {{ 'menu.estadisticas' | trans }}</a></li>
+                        {% endblock %}
+                        {% endif %}
+                    </ul>
+                    
+                    <ul class="nav navbar-nav navbar-right">
+                    {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                    
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-user"></span> {{ app.user.username }}<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'menu.editar' | trans }}</a></li>                          
+                                <li><a href="{{ path('fos_user_change_password') }}">{{ 'menu.password' | trans }}</a></li>
+                                <li role="separator" class="divider"></li>                                
+                                <li><a href="{{ path('fos_user_security_logout') }}">
+                                        <span class="glyphicon glyphicon-log-out"></span><em><small>{{ 'menu.logout' | trans }}</small></em>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                                                                    
+                    {% else %}
+                     <li><a data-toggle="modal" data-target="#loginModal">
+                        <span class="glyphicon glyphicon-log-in"></span> {{ 'menu.entrar' | trans }} </a>
+                    </li>
+                    <li>
+                        <a href="{{ path('fos_user_registration_register') }}"><span class="glyphicon glyphicon-plus"></span> {{ 'menu.registro' | trans }} </a>
+                    </li>
+                    {% endif %}
+                    
+                    <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                            role="button" aria-haspopup="true" aria-expanded="false">
+                            <span class="glyphicon glyphicon-flag"></span> {{ app.request.locale }} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'es'})) }}"><img src="{{ asset('img/es.png') }}" /> - cas</a></li>
+                                <li><a href="{{ path(app.request.get('_route'), app.request.get('_route_params')|merge({'_locale': 'val'})) }}"><img src="{{ asset('img/val.png') }}" /> - val</a></li>
+                            </ul>
+                        </li>                    
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+        
+        <div id="loginModal" class="modal fade" role="dialog">
+            <div class="modal-dialog">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Login </h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-inline" action="{{ path("fos_user_security_check") }}" method="post" >                    
+                        
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+                        
+                            <div class="form-group">
+                                <label for="username" class="sr-only">{{ 'security.login.username'|trans }}</label>
+                                <input type="text" id="username" name="_username" required="required" 
+                                    placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}" class="form-control input-sm"/>
+                            </div>
+                            <div class="form-group">
+                                <label for="password" class="sr-only">{{ 'security.login.password'|trans }}</label>
+                                <input type="password" id="password" name="_password" required="required"
+                                         placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}" class="form-control input-sm" />
+                            </div>
+                            <div class="checkbox">
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
+                                <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
+                            </div>
+                            <input type="submit" id="_submit" name="_submit"
+                                   value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}" class="btn btn-info btn-sm" />                                                       
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% endblock %}
+
+            <div id="content" class="container">  
+                {% block body %}
+                {% endblock %}
+            </div>
+
+{% block footer %}
+    <div class="row-footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-5 col-xs-offset-1 col-sm-2 col-sm-offset-1">
+                    <h5>Links</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="/">{{ 'menu.inicio' | trans }}</a></li>
+                        <li><a href="{{ path('buscar_info') }}">{{ 'menu.que_es' | trans }}</a></li>
+                        <li><a href="{{ path('anuncio_index') }}">{{ 'menu.anuncios' | trans }}</a></li>
+                        <li><a href="{{ path('buscar_contacto') }}">{{ 'menu.contacto' | trans }}</a></li>                        
+                    </ul>
+                </div>
+                <div class="col-xs-6 col-sm-5">
+                    <h5>{{ 'footer.mensaje_1' | trans }}</h5>
+                    <address>
+                      Av. Rambleta, nº 95 - 1º<br>
+                      03700 - Catarroja (Valencia)<br>
+                      Spain<br>
+                      <i class="fa fa-phone"></i>: +xx xxx xx xx<br>
+                      <i class="fa fa-mobile"></i>: +xx xxx xx xx<br>
+                      <i class="fa fa-fax"></i>: +xx xxx xx xx<br>
+                      <i class="fa fa-envelope"></i>: <a href="mailto:comercial@kiupa.es">comercial@kiupa.es</a>
+                   </address>
+                </div>
+                <div class="col-xs-12 col-sm-4">
+                    <div class="nav navbar-nav" style="padding: 40px 10px;">
+                        <a class="btn btn-social-icon btn-google-plus" target="_blank" href="http://google.com/+"><i class="fa fa-google-plus"></i></a>
+                        <a class="btn btn-social-icon btn-facebook" target="_blank" href="https://www.facebook.com/5DacTil.5/"><i class="fa fa-facebook"></i></a>
+                        <a class="btn btn-social-icon btn-linkedin" target="_blank" href="http://www.linkedin.com/in/"><i class="fa fa-linkedin"></i></a>
+                        <a class="btn btn-social-icon btn-twitter" target="_blank" href="http://twitter.com/"><i class="fa fa-twitter"></i></a>
+                        <a class="btn btn-social-icon btn-youtube" target="_blank" href="http://youtube.com/"><i class="fa fa-youtube"></i></a>
+                        <a class="btn btn-social-icon" href="mailto:comercial@kiupa.com"><i class="fa fa-envelope-o"></i></a>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <p style="padding:10px;"></p>
+                    <p align=center>© Copyright 2017 - Paco Angulo Grancha - DAW</p>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+        
+            {% block javascripts %}
+                <!-- Mi propio validador en javascript para aplicar en la página de contacto!-->
+                <script type="text/javascript" src="{{ asset('/js/validator.js') }}"></script>
+                <!-- Fin de mi script -->
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+            {% endblock %}
+        </div> <!-- wrapper div !-->
+    </body>
+</html>

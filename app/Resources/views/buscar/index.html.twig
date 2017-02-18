@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Listado de búsquedas</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipocomercio</th>
+                <th>Criterio</th>
+                <th>Fecha</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for buscar in buscars|sort %}
+            <tr>
+                <td><a href="{{ path('buscar_show', { 'id': buscar.id }) }}">{{ buscar.id }}</a></td>
+                <td>{{ buscar.tipocomercio }}</td>                
+                <td>{{ buscar.criterio }}</td>
+                <td>{% if buscar.fecha %}{{ buscar.fecha|date('d-m-Y') }}{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('buscar_show', { 'id': buscar.id }) }}">Detalles</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('buscar_edit', { 'id': buscar.id }) }}">Edición</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('buscar_new') }}">Nueva búsqueda...</a>
+        </li>
+    </ul>
+{% endblock %}

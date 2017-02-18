@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Categoría del anuncio</h1>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tipoanuncio.id }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ tipoanuncio.nombre }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipoanuncio_index') }}">Listado de categorías</a>
+        </li><br>
+        {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('tipoanuncio_edit', { 'id': tipoanuncio.id }) }}">Editar</a>
+        </li><br>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar">
+            {{ form_end(delete_form) }}
+        </li>
+        {% endif %}
+    </ul>
+{% endblock %}

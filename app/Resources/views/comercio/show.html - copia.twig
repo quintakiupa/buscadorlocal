@@ -1,0 +1,60 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Comercio</h1>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ comercio.id }}</td>
+            </tr>
+            <tr>
+                <th>Posicion</th>
+                <td>{{ comercio.posicion }}</td>
+            </tr>
+            <tr>
+                <th>Nombre</th>
+                <td>{{ comercio.nombre }}</td>
+            </tr>
+            <tr>
+                <th>Direccion</th>
+                <td>{{ comercio.direccion }}</td>
+            </tr>
+            <tr>
+                <th>Telefono</th>
+                <td>{{ comercio.telefono }}</td>
+            </tr>
+            <tr>
+                <th>Web</th>
+                <td>{{ comercio.web }}</td>
+            </tr>
+            <tr>
+                <th>Mapa</th>
+                <td>{{ comercio.mapa }}</td>
+            </tr>
+            <tr>
+                <th>Foto</th>
+                <td>{{ comercio.foto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('comercio_index') }}">Listado de comercios</a>
+        </li>
+        {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('comercio_edit', { 'id': comercio.id }) }}">Editar</a>
+        </li>        
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar">
+            {{ form_end(delete_form) }}
+        </li>
+        {% endif %}
+    </ul>
+{% endblock %}

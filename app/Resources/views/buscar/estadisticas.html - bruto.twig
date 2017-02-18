@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block estadistica %}
+            <li class="active"><a href="#"><i class="fa fa-bar-chart" aria-hidden="true"></i> {{ 'menu.estadisticas' | trans }}</a></li>
+{% endblock %}
+
+{% block body %}
+
+    <div align="center">
+        <img class="img-responsive" src="{{ asset('/img/'~'caratula.jpg') }}" >
+    </div>
+
+        {% if is_granted('ROLE_ADMIN') %}
+            <h1>Estadísticas por criterio</h1>
+
+            Hay {{ tipocomercios|length }} criterios en total.<br>
+            El algoritmo empleado es:<br>
+            total de criterios de un tipo "dividido por" total de tipos de criterios existentes.<br> 
+
+            {% for tipocomercio in tipocomercios %}
+            <h4>{{ tipocomercio.nombre }}</h4>
+
+            <p>{{ ((tipocomercio.busquedas|length / tipocomercios|length) * 100) | round(2, 'common') }}% Porcentaje de búsquedas por este criterio "{{ tipocomercio.nombre }}"</p>
+
+            {% for buscar in tipocomercio.busquedas %}
+            {{ buscar.criterio }}, 
+
+
+            {% endfor %}
+            <hr>
+            {% endfor %}
+        {% endif %}
+
+    </div>
+{% endblock %}
+

@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Crear tema de los anuncios</h1>
+
+    <br><br><br><br><br>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Crear" />
+    {{ form_end(form) }}
+
+    <br><br><br><br><br>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipoanuncio_index') }}">Ir al listado</a>
+        </li>
+    </ul>
+{% endblock %}

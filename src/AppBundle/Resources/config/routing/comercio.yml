@@ -1,0 +1,28 @@
+comercio_index:
+    path:     /list/
+    defaults: { _controller: "AppBundle:Comercio:index" }
+    methods:  GET
+
+comercio_show:
+    path:     /show/{id}/
+    defaults: { _controller: "AppBundle:Comercio:show" }
+    methods:  GET
+
+comercio_new:
+    path:     /new/
+    defaults: { _controller: "AppBundle:Comercio:new" }
+    methods:  [GET, POST]
+
+comercio_edit:
+    path:     /edit/{id}/
+    defaults: { _controller: "AppBundle:Comercio:edit" }
+    methods:  [GET, POST]
+
+comercio_delete:
+    path:     /delete/{id}/
+    defaults: { _controller: "AppBundle:Comercio:delete" }
+    #methods:  DELETE
+
+comercio_listByNomCom:
+    path:    /listByNomCom/{nombre}/
+    defaults: { _controller: "AppBundle:Comercio:listByNomCom" }

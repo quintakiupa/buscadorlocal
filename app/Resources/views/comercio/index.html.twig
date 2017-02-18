@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Listado de comercios</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Posicion</th>
+                <th>Nombre</th>
+                <th>Direccion</th>
+                <th>Telefono</th>
+                <th>E-mail</th>
+                <th>Web</th>
+                <th>Detalles</th>
+                <th>Editar</th>                
+            </tr>
+        </thead>
+        <tbody>
+        {% for comercio in comercios %}
+            <tr>
+                <td><a href="{{ path('comercio_show', { 'id': comercio.id }) }}">{{ comercio.id }}</a></td>
+                <td>{{ comercio.posicion }}</td>
+                <td>{{ comercio.nombre }}</td>
+                <td>{{ comercio.direccion }}</td>
+                <td>{{ comercio.telefono }}</td>
+                <td>{{ comercio.email }}</td>
+                <td>{{ comercio.web }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td><a href="{{ path('comercio_show', { 'id': comercio.id }) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                <td><a href="{{ path('comercio_edit', { 'id': comercio.id }) }}"><i class="fa fa-pencil-square-o"></i></a></td>                
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+    {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('comercio_new') }}">Crear nuevo comercio</a>
+        </li>
+    {% endif %}
+    </ul>
+{% endblock %}

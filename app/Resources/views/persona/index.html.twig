@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Listado de clientes</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Edad</th>
+                <th>Telefono</th>
+                <th>Email</th>
+                <th>Genero</th>
+                <th>Catarroja</th>
+                <th>Detalles</th>
+                <th>Editar</th>                
+            </tr>
+        </thead>
+        <tbody>
+        {% for persona in personas | sortbyfield('nombre') %}
+            <tr>
+                <td><a href="{{ path('persona_show', { 'id': persona.id }) }}">{{ persona.id }}</a></td>
+                <td>{{ persona.nombre }}</td>
+                <td>{{ persona.apellido }}</td>
+                <td>{{ persona.edad }}</td>
+                <td>{{ persona.telefono }}</td>
+                <td>{{ persona.email }}</td>
+                <td>{{ persona.genero }}</td>
+                <td>{% if persona.catarroja %}Yes{% else %}No{% endif %}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td><a href="{{ path('persona_show', { 'id': persona.id }) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                <td><a href="{{ path('persona_edit', { 'id': persona.id }) }}"><i class="fa fa-pencil-square-o"></i></a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+    {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('persona_new') }}">Crear nuevo cliente</a>
+        </li>
+    {% endif %}
+    </ul>
+{% endblock %}

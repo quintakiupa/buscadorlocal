@@ -1,0 +1,23 @@
+app_tipoanuncio:
+    resource: "@AppBundle/Resources/config/routing/tipoanuncio.yml"
+    prefix:   /{_locale}/tipoanuncio
+
+app_anuncio:
+    resource: "@AppBundle/Resources/config/routing/anuncio.yml"
+    prefix:   /{_locale}/anuncio
+
+app_persona:
+    resource: "@AppBundle/Resources/config/routing/persona.yml"
+    prefix:   /{_locale}/persona
+
+app_comercio:
+    resource: "@AppBundle/Resources/config/routing/comercio.yml"
+    prefix:   /{_locale}/comercio
+
+app_tipocomercio:
+    resource: "@AppBundle/Resources/config/routing/tipocomercio.yml"
+    prefix:   /{_locale}/tipocomercio
+
+app_buscar:
+    resource: "@AppBundle/Resources/config/routing/buscar.yml"
+    prefix:   /{_locale}/buscar

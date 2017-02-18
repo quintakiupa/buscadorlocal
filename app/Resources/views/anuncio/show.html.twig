@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Anuncio</h1>
+
+    <table class="table table-striped">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ anuncio.id }}</td>
+            </tr>
+            <tr>
+                <th>Fecha</th>
+                <td>{% if anuncio.fecha %}{{ anuncio.fecha|date('d-m-Y') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Titulo</th>
+                <td>{{ anuncio.titulo }}</td>
+            </tr>
+            <tr>
+                <th>Texto</th>
+                <td>{{ anuncio.texto }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('anuncio_index') }}">Listar anuncios</a>
+        </li><br>
+        {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('anuncio_edit', { 'id': anuncio.id }) }}">Editar</a>
+        </li><br>
+        <li>        
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Borrar">
+            {{ form_end(delete_form) }}
+        </li>
+        {% endif %}
+    </ul>
+{% endblock %}

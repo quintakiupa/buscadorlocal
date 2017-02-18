@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Listado categoría de anuncios</h1>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Detalles</th>
+                <th>Editar</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipoanuncio in tipoanuncios | sortbyfield('nombre') %}
+            <tr>
+                <td><a href="{{ path('tipoanuncio_show', { 'id': tipoanuncio.id }) }}">{{ tipoanuncio.id }}</a></td>
+                <td>{{ tipoanuncio.nombre }}</td>
+                {% if is_granted('ROLE_ADMIN') %}
+                <td><a href="{{ path('tipoanuncio_show', { 'id': tipoanuncio.id }) }}"><i class="fa fa-eye" aria-hidden="true"></i></a></td>
+                <td><a href="{{ path('tipoanuncio_edit', { 'id': tipoanuncio.id }) }}"><i class="fa fa-pencil-square-o"></i></a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <ul>
+    {% if is_granted('ROLE_ADMIN') %}
+        <li>
+            <a href="{{ path('tipoanuncio_new') }}">Crear nueva categoría</a>
+        </li>
+    {% endif %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% trans_default_domain 'AppBundle' %}
+
+{% block body %}
+    <h1>Administrar clientes</h1>
+
+    <hr>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <br>
+        <input type="submit" value="Crear" />
+    {{ form_end(form) }}
+
+    <br><br><br>
+
+    <ul>
+        <li>
+            <a href="{{ path('persona_index') }}">Ir al listado</a>
+        </li>
+    </ul>
+{% endblock %}
