@@ -1,6 +1,5 @@
 {
-    "name": "paulino-francisco/buscadorlocal",
-    "relise": "1.0",
+    "name": "paulino-francisco/buscadorlocal",    
     "license": "proprietary",
     "type": "project",
     "autoload": {
