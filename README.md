@@ -23,14 +23,15 @@ El paso “0” es poner en marcha el servidor apache y el mysql
 4. En el fichero security.yml poner los parámetros para su base de datos.
 5. Ejecutar: php app/console doctrine:schema
 6. Ir a phpMyAdmin y dentro de la base de datos que haya creado en el paso nº 3, importar el archivo “datos prueba.sql” que adjunto con el proyecto.
+7. Ejecutar: php app/console server:run
 
 Con estos pasos ya están creados los usuarios admin y user. (admin ya tiene asignado el ROLE_ADMIN)
 Para usarlos hay que entrar en login y password lo mismo. (Ej: admin – admin)
 
-7. Ejecutar: php app/console server:run
-
 Si todo ha ido bien, ya se puede ir al navegador y poner en la URL:
+
 http://localhost:8000
+
 Si no funciona:
 http://127.0.0.1:8000
 
