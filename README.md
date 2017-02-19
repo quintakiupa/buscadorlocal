@@ -4,7 +4,7 @@
 [![Monthly Downloads](https://poser.pugx.org/paulino-francisco/buscadorlocal/d/monthly)](https://packagist.org/packages/paulino-francisco/buscadorlocal)
 
 
-# A Symfony project created on December 16, 2016, 4:28 pm.
+# Proyecto fin de curso DAW - Symfony marzo 2017
 ## By Paulino Francisco Angulo Grancha
 
 ### buscadorlocal
