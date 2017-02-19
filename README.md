@@ -9,11 +9,10 @@
 
 ### buscadorlocal
 
-
 Pasos para poner a nivel local la aplicación en marcha:
 
 Se debe tener instalado servidor apache, mysql y composer.
-Yo realicé este proyecto en wuindows 8.1 – Utilicé xampp, composer y symfony 2.8
+Yo realicé este proyecto en windows 8.1 – Utilicé xampp, composer y symfony 2.8
 
 El paso “0” es poner en marcha el servidor apache y el mysql
 
