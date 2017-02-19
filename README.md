@@ -22,7 +22,7 @@ El paso “0” es poner en marcha el servidor apache y el mysql
 3. Crear en mysql una base de datos con cotejamiento "UTF8-spanish"
 4. En el fichero security.yml poner los parámetros para su base de datos.
 5. Ejecutar: php app/console doctrine:schema
-6. Ir a phpMyAdmin y dentro de la base de datos que haya creado en el paso nº 3, importar el archivo “datos prueba.sql” que adjunto con el proyecto.
+6. Ir a phpMyAdmin y dentro de la base de datos que haya creado en el paso nº 3, importar el archivo “buscadorlocal.sql” que adjunto con el proyecto.
 7. Ejecutar: php app/console server:run
 
 Con estos pasos ya están creados los usuarios admin y user. (admin ya tiene asignado el ROLE_ADMIN)
