@@ -9,7 +9,6 @@
 
 ### buscadorlocal (Catarroja -> Valencia -> Spain)
 
-
 Pasos para poner a nivel local la aplicación en marcha:
 
 Se debe tener instalado servidor apache, mysql y composer.
