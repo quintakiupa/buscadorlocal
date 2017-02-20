@@ -64,8 +64,31 @@ inicio:
     articulo_6: "Bar polideportivo, el mejor lugar para reponer fuerzas después del ejercicio."
     articulo_7: "Reservas al: 96 xx xxx xxx"
     articulo_8: "Plaza Mayor"
-    articulo_9: "Do you want a 'Café con Leche' in 'Plaza Mayor?'"
+    articulo_9: "Do you want a relaxing cup of 'Café con Leche' in 'Plaza Mayor?'"
     articulo_10: "Cafetería SPANGLISH. Quizá el mejor lugar para tomar un café."
+
+
+tipoanuncio:
+    titulo: "Crear tema de los anuncios"
+    enlace_1: "Ir al listado "
+
+
+contacto:
+    titulo_1: "Contacte con nosotros"
+    titulo_2: "Rellene el formulario:"
+    nombre: "Nombre: "
+    apellido: "Apellido: "
+    telefono: "Teléfono: "
+    email: "E-mail: "
+    llamar: "¿Prefiere que le llamemos?"
+    mensaje: "Su mensaje: "
+    boton: "Enviar datos..."
+    placeholder_1: "Aquí su nombre"
+    placeholder_2: "Aquí su apellido"
+    placeholder_3: "Prefijo País"
+    placeholder_4: "Aquí su nº de teléfono"
+    placeholder_5: "Email: "
+
 
 
 footer:

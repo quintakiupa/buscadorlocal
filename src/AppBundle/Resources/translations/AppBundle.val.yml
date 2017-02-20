@@ -63,8 +63,30 @@ inicio:
     articulo_6: "Bar poliesportiu, el millor lloc per a reposar forces després de l'exercici."
     articulo_7: "Reserves al: 96 xx xxx xxx"
     articulo_8: "Plaça Major"
-    articulo_9: "Do you want a 'Café amb llet' in 'Plaça Major?'"
+    articulo_9: "Do you want a relaxing cup of 'Café amb llet' in 'Plaça Major?'"
     articulo_10: "Cafeteria SPANGLISH. Potser el millor lloc per a prendre un café."
+
+
+tipoanuncio:
+    titulo: "Crear tema dels anuncis"
+    enlace_1: "Anar al llistat "
+
+
+contacto:
+    titulo_1: "Contacte amb nosaltres"
+    titulo_2: "Òmpliga el formulari:"
+    nombre: "Nom: "
+    apellido: "Cognom: "
+    telefono: "Telèfon: "
+    email: "E-mail: "
+    llamar: "¿Preferix que li cridem?"
+    mensaje: "El seu missatge: "
+    boton: "Enviar datos..."
+    placeholder_1: "Ací el seu nom"
+    placeholder_2: "Ací el seu cognom"
+    placeholder_3: "Prefix País"
+    placeholder_4: "Ací el seu núm. de telèfon"
+    placeholder_5: "Ací el seu Email: "
 
 
 footer:
