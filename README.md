@@ -25,7 +25,7 @@ El paso “0” es poner en marcha el servidor apache y el mysql
 7. Ejecutar: php app/console server:run
 
 Con estos pasos ya están creados los usuarios admin y user. (admin ya tiene asignado el ROLE_ADMIN)
-Para usarlos hay que entrar en login y password lo mismo. (Ej: admin – admin)
+Para usarlos hay que entrar en login y password lo mismo. (Ej: admin – admin, user - user)
 
 Si todo ha ido bien, ya se puede ir al navegador y poner en la URL:
 
