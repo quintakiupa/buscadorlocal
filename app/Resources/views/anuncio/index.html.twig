@@ -3,7 +3,7 @@
 {% trans_default_domain 'AppBundle' %}
 
 {% block body %}
-    <h1>Anuncios de interés:</h1>
+    <h1>{{ 'anuncios.titulo_3' | trans }}</h1>
     <br>
     <table class="table">        
         {% for anuncio in anuncios | reverse %}
@@ -12,7 +12,7 @@
             <tr>
                 <td class="warning">{{ anuncio.texto }}</td>
                 <td class="danger">
-                <a href="{{ path('anuncio_show', { 'id': anuncio.id }) }}">Ver</a>
+                <a href="{{ path('anuncio_show', { 'id': anuncio.id }) }}">{{ 'tablas.campo_15' | trans}}</a>
                 {% if is_granted('ROLE_ADMIN') %}
                 <a href="{{ path('anuncio_edit', { 'id': anuncio.id }) }}">Editar</a>
                 {% endif %}                

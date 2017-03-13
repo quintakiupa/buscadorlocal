@@ -12,42 +12,42 @@
         <img class="img-responsive" src="{{ asset('/img/'~'caratula.jpg') }}" >
     </div>
 
-    <h2>Contacte con nosotros</h2>
+    <h2>{{ 'contacto.titulo_1' | trans }}</h2>
 
 
 <div class="row row-content">
             <div class="col-xs-12">
-                <h3>Rellene el formulario:</h3>                
+                <h3>{{ 'contacto.titulo_2' | trans }}</h3>                
             </div>
             <div class="col-xs-12 col-sm-9">
                 <form class="form-horizontal" role="form" method="post" action="mailto:comercial@kiupa.es">
                     <div class="form-group">
-                        <label for="firstname" class="col-sm-2 control-label">Nombre: </label>
+                        <label for="firstname" class="col-sm-2 control-label">{{ 'contacto.nombre' | trans }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Aquí su nombre">
+                            <input type="text" class="form-control" id="firstname" name="firstname" placeholder="{{ 'contacto.placeholder_1' | trans }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="lastname" class="col-sm-2 control-label">Apellidos: </label>
+                        <label for="lastname" class="col-sm-2 control-label">{{ 'contacto.apellido' | trans }}</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Aquí sus apellidos">
+                            <input type="text" class="form-control" id="lastname" name="lastname" placeholder="{{ 'contacto.placeholder_2' | trans }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="telnum" class="col-xs-12 col-sm-2 control-label">Teléfono: </label>
+                        <label for="telnum" class="col-xs-12 col-sm-2 control-label">{{ 'contacto.telefono' | trans }}</label>
                         <div class="col-xs-5 col-sm-4 col-md-3">                        
                             <div class="input-group">                                
                                 <div class="input-group-addon">(</div>
-                                    <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="Prefijo Pais">
+                                    <input type="tel" class="form-control" id="areacode" name="areacode" placeholder="{{ 'contacto.placeholder_3' | trans }}">
                                 <div class="input-group-addon">)</div>                                
                             </div>                            
                         </div>
                         <div class="col-xs-7 col-sm-6 col-md-7">
-                                    <input type="tel" class="form-control" id="telnum" name="telnum" maxlength="9" placeholder="Aquí su nº de teléfono">
+                                    <input type="tel" class="form-control" id="telnum" name="telnum" maxlength="9" placeholder="{{ 'contacto.placeholder_4' | trans }}">
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="emailid" class="col-sm-2 control-label">Email: </label>
+                        <label for="emailid" class="col-sm-2 control-label">{{ 'contacto.email' | trans }}</label>
                         <div class="col-sm-10">
                             <input type="email" class="form-control" id="emailid" name="emailid" pattern="^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" placeholder="Aquí su Email">
                         </div>
@@ -56,7 +56,7 @@
                         <div class="checkbox col-sm-5 col-sm-offset-2">
                             <label class="checkbox-inline">
                                 <input type="checkbox" name="approve" value="">
-                                <strong>Prefiere que le llamemos?</strong>
+                                <strong>{{ 'contacto.llamar' | trans }}</strong>
                             </label>
                         </div>
                         <div class="col-sm-3 col-sm-offset-1">
@@ -67,14 +67,14 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="feedback" class="col-sm-2 control-label">Su mensaje</label>
+                        <label for="feedback" class="col-sm-2 control-label">{{ 'contacto.mensaje' | trans }}</label>
                         <div class="col-sm-10">
                             <textarea class="form-control" id="feedback" name="feedback" rows="12"></textarea>
                         </div>
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-primary">Enviar datos...</button>
+                            <button type="submit" class="btn btn-primary">{{ 'contacto.boton' | trans }}</button>
                         </div>
                     </div>
                 </form>

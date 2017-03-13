@@ -68,8 +68,24 @@ inicio:
 
 
 tipoanuncio:
-    titulo: "Crear tema dels anuncis"
+    titulo_1: "Crear tema dels anuncis"
+    titulo_2: "Llistat categoria d'anuncis"
     enlace_1: "Anar al llistat "
+    enlace_2: "Crear nova categoria"
+
+anuncios:
+    titulo_1: "Crear Anunci"
+    titulo_2: "Anar al llistat d'anuncis"
+    titulo_3: "Anuncis d'interés"
+
+
+tipocomercio:
+
+
+comercio:
+    titulo_1: "Administrar comerços"
+    titulo_2: "Llistat de comerços"
+    titulo_3: "Crear nou comerç"
 
 
 contacto:
@@ -89,5 +105,31 @@ contacto:
     placeholder_5: "Ací el seu Email: "
 
 
+tablas:
+    campo_1: "Nom"
+    campo_2: "Cognoms"
+    campo_3: "Edat"
+    campo_4: "Telèfon"
+    campo_5: "Gènere"
+    campo_6: "Catarrocha"
+    campo_7: "Posició"
+    campo_8: "Direcció"
+    campo_9: "Categoria"
+    campo_10: "Client"
+    campo_11: "Detalls"
+    campo_12: "Font"
+    campo_13: "Títol"
+    campo_14: "Text"
+    campo_15: "Veure"
+
+
+estadisticas:
+    titulo_1: "Estadístiques per criteri"
+    titulo_2: "Hi ha "
+    titulo_3: " criteris en total."
+    titulo_4: "L'algoritme empleat és:"
+    titulo_5: "total de criteris d'un tipus, dividit pel total de tipus dels criteris existents."
+
+
 footer:
-    mensaje_1: "Buscador per a recolzar el xicotet comerç de Catarroja"
+    mensaje_1: "Buscador per a recolzar el xicotet comerç de Catarrocha"

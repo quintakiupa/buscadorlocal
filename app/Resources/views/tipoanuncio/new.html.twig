@@ -3,7 +3,8 @@
 {% trans_default_domain 'AppBundle' %}
 
 {% block body %}
-    <h1>Crear tema de los anuncios</h1>
+
+    <h1>{{ 'tipoanuncio.titulo_1' | trans }}</h1>
 
     <br><br><br><br><br>
 
@@ -16,7 +17,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('tipoanuncio_index') }}">Ir al listado</a>
+            <a href="{{ path('tipoanuncio_index') }}">{{ 'tipoanuncio.enlace_1' | trans }}</a>
         </li>
     </ul>
 {% endblock %}

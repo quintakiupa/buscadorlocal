@@ -3,16 +3,16 @@
 {% trans_default_domain 'AppBundle' %}
 
 {% block body %}
-    <h1>Crear Anuncio</h1>
+    <h1>{{ 'anuncios.titulo_1' | trans }}</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Crear" />
+        {{ form_widget(form) }}        
+        <input type="submit" value="Crear" />        
     {{ form_end(form) }}
-
+    <br>
     <ul>
-        <li>
-            <a href="{{ path('anuncio_index') }}">listado de anuncios</a>
+        <li>        
+            <a href="{{ path('anuncio_index') }}">{{ 'anuncios.titulo_2' | trans }}</a>
         </li>
     </ul>
 {% endblock %}

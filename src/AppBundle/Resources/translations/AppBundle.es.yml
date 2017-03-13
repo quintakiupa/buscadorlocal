@@ -69,8 +69,24 @@ inicio:
 
 
 tipoanuncio:
-    titulo: "Crear tema de los anuncios"
+    titulo_1: "Crear tema de los anuncios"
+    titulo_2: "Listado categoría de anuncios"
     enlace_1: "Ir al listado "
+    enlace_2: "Crear nueva categoría"
+
+anuncios:
+    titulo_1: "Crear Anuncio"
+    titulo_2: "Ir al listado de anuncios"
+    titulo_3: "Anuncios de interés:"
+
+
+tipocomercio:
+
+
+comercio:
+    titulo_1: "Administrar comercios"
+    titulo_2: "Listado de comercios"
+    titulo_3: "Crear nuevo comercio"
 
 
 contacto:
@@ -90,6 +106,30 @@ contacto:
     placeholder_5: "Email: "
 
 
+tablas:
+    campo_1: "Nombre"
+    campo_2: "Apellidos"
+    campo_3: "Edad"
+    campo_4: "Teléfono"
+    campo_5: "Género"
+    campo_6: "Catarroja"
+    campo_7: "Posición"
+    campo_8: "Dirección"
+    campo_9: "Categoría"
+    campo_10: "Cliente"
+    campo_11: "Detalles"
+    campo_12: "Fuente"
+    campo_13: "Título"
+    campo_14: "Texto"
+    campo_15: "Ver"
+
+
+estadisticas:
+    titulo_1: "Estadísticas por criterio"
+    titulo_2: "Hay "
+    titulo_3: " criterios en total."
+    titulo_4: "El algoritmo empleado es:"
+    titulo_5: "total de criterios de un tipo, dividido por el total de tipos de los criterios existentes."
 
 footer:
     mensaje_1: "Buscador para apoyar el pequeño comercio de Catarroja"

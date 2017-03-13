@@ -13,11 +13,11 @@
     </div>
 
     {% if is_granted('ROLE_ADMIN') %}
-        <h1>Estadísticas por criterio</h1>
+        <h1>{{ 'estadisticas.titulo_1' | trans }}</h1>
 
-            Hay {{ tipocomercios|length }} criterios en total.<br>
-            El algoritmo empleado es:<br>
-            total de criterios de un tipo "dividido por" total de tipos de criterios existentes.<br> 
+            {{ 'estadisticas.titulo_2' | trans }} {{ tipocomercios|length }} {{ 'estadisticas.titulo_3' | trans }}<br>
+            {{ 'estadisticas.titulo_4' | trans }}<br>
+            {{ 'estadisticas.titulo_5' | trans }}<br> 
 
         <br>
         <table class="table">

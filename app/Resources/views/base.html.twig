@@ -5,6 +5,9 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        <meta name="description" content="Buscador local de tiendas y servicios en la zona de Catarroja, Valencia - SPAIN" />
+        <meta name="keywords" content="buscador local Catarroja, symfony, html5, javascript, bootstrap, jquery, mysql, postgresql" />
+        <meta name="author" content="Paulino Francisco Angulo Grancha"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <title>
@@ -15,11 +18,10 @@
 
         {% block stylesheets %}
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>                     
 <!--        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.min.css.map"/> -->
             <link rel="stylesheet" href="{{ asset('css/bootstrap-social.css') }}" />
             <link rel="stylesheet" href="{{ asset('css/mis_estilos.css') }}" />
-
             <link rel="stylesheet" href="{{ asset('/css/mystyles.css') }}" /> 
             <link rel="stylesheet" href="{{ asset('/css/mycss.css') }}" />
 
@@ -89,7 +91,9 @@
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">{{ 'menu.admin_7' | trans }}</li>                                
                                 <li><a href="{{ path('comercio_new') }}">{{ 'menu.admin_8' | trans }}</a></li>
-                                <li><a href="{{ path('comercio_index') }}">{{ 'menu.admin_9' | trans }}</a></li>  
+                                <li><a href="{{ path('comercio_index') }}">{{ 'menu.admin_9' | trans }}</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li><a target="new" href="http://www.kiupa.es/downloads/Manual_Administrador.pdf">{{ 'Manual' | trans }}</a></li>  
                             </ul>
                         </li> 
                         
