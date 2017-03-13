@@ -17,7 +17,7 @@ Yo realicé este proyecto en windows 8.1 – Utilicé xampp, composer y symfony 
 El paso “0” es poner en marcha el servidor apache y el mysql
 
 1. Descargar y descomprimir el proyecto.
-2. Situarse dentro de la carpeta del proyecto y ejecutar “composer install” o “composer update”
+2. Situarse dentro de la carpeta del proyecto y ejecutar “composer install”
 3. Crear en mysql una base de datos con cotejamiento "UTF8-spanish"
 4. En el fichero security.yml poner los parámetros para su base de datos.
 5. Ejecutar: php app/console doctrine:schema:create
@@ -25,7 +25,7 @@ El paso “0” es poner en marcha el servidor apache y el mysql
 7. Ejecutar: php app/console server:run
 
 Con estos pasos ya están creados los usuarios admin y user. (admin ya tiene asignado el ROLE_ADMIN)
-Para usarlos hay que entrar en login y password lo mismo. (Ej: admin – admin)
+Para usarlos hay que entrar en login y password lo mismo. (Ej: admin – admin, user - user)
 
 Si todo ha ido bien, ya se puede ir al navegador y poner en la URL:
 
