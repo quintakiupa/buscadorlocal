@@ -17,7 +17,7 @@ Yo realicé este proyecto en windows 8.1 – Utilicé xampp, composer y symfony 
 El paso “0” es poner en marcha el servidor apache y el mysql
 
 1. Descargar y descomprimir el proyecto.
-2. Situarse dentro de la carpeta del proyecto y ejecutar “composer install” o “composer update”
+2. Situarse dentro de la carpeta del proyecto y ejecutar “composer install”
 3. Crear en mysql una base de datos con cotejamiento "UTF8-spanish"
 4. En el fichero security.yml poner los parámetros para su base de datos.
 5. Ejecutar: php app/console doctrine:schema:create
