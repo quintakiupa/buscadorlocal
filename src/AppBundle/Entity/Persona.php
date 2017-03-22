@@ -41,6 +41,13 @@ class Persona
      * @var int
      *
      * @ORM\Column(name="edad", type="integer")
+     * @Assert\Range(
+     *      min = 18,
+     *      max = 90,
+     *      minMessage = "person.age.min",
+     *      maxMessage = "person.age.max",
+     *      invalidMessage = "person.age.invalid"
+     * )
      */
     private $edad;
 

@@ -92,6 +92,16 @@ class AnuncioController extends Controller
         ));
     }
 
+
+    public function listAllByTipoanuncioAction() {
+    
+        $tipoanuncios= $this->getDoctrine()->getRepository('AppBundle:Tipoanuncio')->findAll();
+    
+        return $this->render('anuncio/listByTipoanuncio.html.twig', array('tipoanuncios'=>$tipoanuncios));
+    
+    }
+
+
     /**
      * Deletes a anuncio entity.
      *

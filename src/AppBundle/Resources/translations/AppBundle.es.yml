@@ -47,6 +47,7 @@ menu:
     editar:  "Editar Cuenta"
     password: "Cambiar Password"
     logout:  "Salir"
+    ltipo: "Listar por temas"
 
 
 inicio:
@@ -81,12 +82,16 @@ anuncios:
 
 
 tipocomercio:
+    titulo_1: "Crear rama de comercios / servicios"
+    titulo_2: "Ir al listado"
+    titulo_3: "Rama del Comercio / Actividad"
 
 
 comercio:
     titulo_1: "Administrar comercios"
     titulo_2: "Listado de comercios"
     titulo_3: "Crear nuevo comercio"
+    titulo_4: "Crear nueva rama de comercio"
 
 
 contacto:
@@ -106,6 +111,12 @@ contacto:
     placeholder_5: "Email: "
 
 
+personas:
+    titulo_1: ""
+    titulo_2: ""
+    titulo_3: "Listado de clientes"
+    titulo_4: "Crear nuevo cliente"
+
 tablas:
     campo_1: "Nombre"
     campo_2: "Apellidos"
@@ -123,6 +134,10 @@ tablas:
     campo_14: "Texto"
     campo_15: "Ver"
 
+ltipo:
+    titulo_1: "Listado de anuncios clasificados por tema"
+    titulo_2: ""
+    titulo_3: ""
 
 estadisticas:
     titulo_1: "Estadísticas por criterio"

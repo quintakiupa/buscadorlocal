@@ -6,6 +6,8 @@
     <h1>Administrar clientes</h1>
 
     <hr>
+<div class="row">
+    <div class='col-sm-5'>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -20,4 +22,6 @@
             <a href="{{ path('persona_index') }}">Ir al listado</a>
         </li>
     </ul>
+  </div>
+</div>
 {% endblock %}

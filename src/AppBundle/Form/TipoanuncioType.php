@@ -15,7 +15,7 @@ class TipoanuncioType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('nombre', TextType::class, array(
-                    'label' => 'Nombre '
+                    'label' => 'Tema '
             ));
     }
     

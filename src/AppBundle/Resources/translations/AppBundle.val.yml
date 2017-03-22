@@ -46,6 +46,7 @@ menu:
     editar:  "Editar Compte"
     password: "Canviar Password"
     logout:  "Eixir"
+    ltipo: "Llistar per temes"
 
 
 inicio:
@@ -80,6 +81,10 @@ anuncios:
 
 
 tipocomercio:
+    titulo_1: "Crear branca de comerços / servicis"
+    titulo_2: "Anar al llistat"
+    titulo_3: "Branca del Comerç / Activitat"
+    titulo_4: "Crear nova branca de comerç"
 
 
 comercio:
@@ -105,6 +110,13 @@ contacto:
     placeholder_5: "Ací el seu Email: "
 
 
+personas:
+    titulo_1: ""
+    titulo_2: ""
+    titulo_3: "Llistat de clients"
+    titulo_4: "Crear nou client"
+
+
 tablas:
     campo_1: "Nom"
     campo_2: "Cognoms"
@@ -121,6 +133,11 @@ tablas:
     campo_13: "Títol"
     campo_14: "Text"
     campo_15: "Veure"
+
+ltipo:
+    titulo_1: "Llistat d'anuncis classificats per tema"
+    titulo_2: ""
+    titulo_3: ""
 
 
 estadisticas:

@@ -1,8 +1,8 @@
 person:
     age:
-        min:  'La edad mínima es: {{ limit }}'
-        max: 'La edad máxima es: {{ limit }}'
-        invalid: 'El valor introducido no es válido' 
+        min:  "L'edat mínima és: {{ limit }}"
+        max: "L'edat màxima és: {{ limit }}"
+        invalid: 'El valor introduït no és vàlid' 
     height:
         min: 'La altura mínima es {{ limit }}'
         max: 'La altura máxima es {{ limit }}'

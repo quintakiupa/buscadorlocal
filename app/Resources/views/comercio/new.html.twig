@@ -6,7 +6,8 @@
     <h1>Administrar comercios</h1>
 
     <hr>
-
+<div class="row">
+    <div class='col-sm-5'>
     {{ form_start(form) }}
         {{ form_widget(form) }}
         <br>
@@ -20,4 +21,6 @@
             <a href="{{ path('comercio_index') }}">Listado de comercios</a>
         </li>
     </ul>
+  </div>
+</div> 
 {% endblock %}

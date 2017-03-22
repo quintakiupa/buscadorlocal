@@ -3,9 +3,11 @@
 {% trans_default_domain 'AppBundle' %}
 
 {% block body %}
-    <h1>Crear rama de comercios / servicios</h1>
+    <h1>{{ 'tipocomercio.titulo_1' | trans}}</h1>
 
     <br><br><br><br><br>
+<div class="row">
+    <div class='col-sm-5'>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
@@ -16,7 +18,9 @@
 
     <ul>
         <li>
-            <a href="{{ path('tipocomercio_index') }}">Ir al listado</a>
+            <a href="{{ path('tipocomercio_index') }}">{{ 'tipocomercio.titulo_2' | trans}}</a>
         </li>
     </ul>
+  </div>
+</div> 
 {% endblock %}

@@ -3,14 +3,14 @@
 {% trans_default_domain 'AppBundle' %}
 
 {% block body %}
-    <h1>Rama del Comercio / Actividad </h1>
+    <h1>{{ 'tipocomercio.titulo_3' | trans }}</h1>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nombre</th>
-                <th>Detalles</th>
+                <th>{{ 'tablas.campo_1' | trans }}</th>
+                <th>{{ 'tablas.campo_11' | trans }}</th>
                 <th>Editar</th>                
             </tr>
         </thead>
@@ -31,7 +31,7 @@
     <ul>
     {% if is_granted('ROLE_ADMIN') %}
         <li>
-            <a href="{{ path('tipocomercio_new') }}">Crear nueva rama de comercio</a>
+            <a href="{{ path('tipocomercio_new') }}">{{ 'tipocomercio.titulo_4' | trans }}</a>
         </li>
     {% endif %}
     </ul>

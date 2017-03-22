@@ -5,7 +5,8 @@
 {% block body %}
 
     <h1>{{ 'tipoanuncio.titulo_1' | trans }}</h1>
-
+<div class="row">
+    <div class='col-sm-5'>
     <br><br><br><br><br>
 
     {{ form_start(form) }}
@@ -20,4 +21,6 @@
             <a href="{{ path('tipoanuncio_index') }}">{{ 'tipoanuncio.enlace_1' | trans }}</a>
         </li>
     </ul>
+  </div>
+</div>
 {% endblock %}

@@ -3,20 +3,20 @@
 {% trans_default_domain 'AppBundle' %}
 
 {% block body %}
-    <h1>Listado de clientes</h1>
+    <h1>{{ 'personas.titulo_3' | trans }}</h1>
 
     <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Edad</th>
-                <th>Telefono</th>
+                <th>{{ 'tablas.campo_1' | trans }}</th>
+                <th>{{ 'tablas.campo_2' | trans }}</th>
+                <th>{{ 'tablas.campo_3' | trans }}</th>
+                <th>{{ 'tablas.campo_4' | trans }}</th>
                 <th>Email</th>
-                <th>Genero</th>
-                <th>Catarroja</th>
-                <th>Detalles</th>
+                <th>{{ 'tablas.campo_5' | trans }}</th>
+                <th>{{ 'tablas.campo_6' | trans }}</th>
+                <th>{{ 'tablas.campo_11' | trans }}</th>
                 <th>Editar</th>                
             </tr>
         </thead>
@@ -43,7 +43,7 @@
     <ul>
     {% if is_granted('ROLE_ADMIN') %}
         <li>
-            <a href="{{ path('persona_new') }}">Crear nuevo cliente</a>
+            <a href="{{ path('persona_new') }}">{{ 'personas.titulo_4' | trans }}</a>
         </li>
     {% endif %}
     </ul>

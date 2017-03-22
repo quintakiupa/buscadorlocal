@@ -22,3 +22,7 @@ anuncio_delete:
     path:     /delete/{id}/
     defaults: { _controller: "AppBundle:Anuncio:delete" }
     #methods:  DELETE
+
+anuncio_ltipo:
+    path:    /listAllByTipoanuncio/
+    defaults: { _controller: "AppBundle:Anuncio:listAllByTipoanuncio" }
