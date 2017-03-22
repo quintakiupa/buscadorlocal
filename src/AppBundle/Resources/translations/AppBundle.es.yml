@@ -85,6 +85,7 @@ tipocomercio:
     titulo_1: "Crear rama de comercios / servicios"
     titulo_2: "Ir al listado"
     titulo_3: "Rama del Comercio / Actividad"
+    titulo_4: "Crear nueva rama de comercio"
 
 
 comercio:
